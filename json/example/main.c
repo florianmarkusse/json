@@ -9,17 +9,22 @@
 #include <stddef.h>             // for ptrdiff_t
 #include <stdlib.h>             // for malloc
 
+// The struct that we want to (de)serialize
 typedef struct {
+    // Note that primitive JSON data types are already predefined.
     flo_json_string text;
     flo_json_uint64 status;
 } flo_Example;
+// Wrap it in a JSON object.
 FLO_JSON_CREATE_OBJECT(flo_Example, flo_json_Example);
 
-flo_json_schema memberBuffer[] = {
+// Create an array of the JSON object keys holding their type and offset into
+// its parent object.
+flo_json_schema keyBuffer[] = {
     FLO_JSON_CREATE_SIMPLE_KEY(flo_json_Example, flo_Example, text),
     FLO_JSON_CREATE_SIMPLE_KEY(flo_json_Example, flo_Example, status),
 };
-FLO_JSON_CREATE_KEYS_ARRAY(memberBuffer, flo_json_ExampleKeys);
+FLO_JSON_CREATE_KEYS_ARRAY(keyBuffer, flo_json_ExampleKeys);
 
 flo_string exampleJSON =
     FLO_STRING("{\"text\": \n \"Request received succesfully.\"         , "
