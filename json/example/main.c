@@ -1,47 +1,3 @@
-# JSON parser & (de)serializer
-
-This project contains the serializing and deserializing of JSON according to a
-schema. Note that it is not possible to parse a generic JSON input, a schema
-must always be passed. 
-
-Moreover, the project requires no dependencies other than those pre-installed
-on a simple UNIX system.
-
-To get started:
-1. Clone the repository: 
-```
-git clone git@github.com:florianmarkusse/json.git
-```
-2. Install the required (dev-)dependencies, should be a no-op if skipping the development dependencies:
-```
-./install-dependencies.sh # or,
-./install-dev-dependencies.sh
-```
-3. Run the build script:
-```
-./build.sh -h
-```
-
-## Features
-Currently supported data types:
-- `string`
-- `bool`
-- `uint64_t`
-- `object`
-- array of:
-    - `string`
-    - `bool`
-    - `uint64_t`
-    - `object`
-
-the processing of negative/floating point numbers or heterogeneous arrays is
-currently **not** supported.
-
-## Quick Example
-Below is an example of how to use the `json` tool. Also have a look at
-`json/example`.
-
-```
 #include "util/log.h"           // for FLO_INFO, FLO_FLUSH_AFTER, FLO_LOG_C...
 #include "util/memory/arena.h"  // for flo_arena
 #include "util/text/string.h"   // for FLO_STRING, flo_string, FLO_STRING_LEN
@@ -111,21 +67,3 @@ int main() {
 
     return 0;
 }
-```
-
-## build.sh 
-This is a build script intended to make it easier to rebuild your
-code. It is possible to build the code without it, this is done by invoking
-CMake directly.
-
-## install-dependencies.sh
-This script installs the required depencencies for the project. Note that every
-UNIX installation should have these installed already.
-
-## install-dev-dependencies.sh
-This script installs the required development depencencies for the project.
-Note that for most people this will merely install the tools for fuzzing and
-the others should already be present.
-
-## Fuzzing
-For fuzzing instructions, please refer to `json/fuzzing/README.md`

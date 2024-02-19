@@ -1,0 +1,10 @@
+project(parse-framework LANGUAGES C)
+
+set(FLO_PARSE_LIBRARY "${PROJECT_NAME}-${CMAKE_BUILD_TYPE}")
+set(LIBRARY_TYPE "STATIC")
+
+add_library(${FLO_PARSE_LIBRARY} INTERFACE)
+
+target_include_directories(${FLO_PARSE_LIBRARY} INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+target_link_libraries(${FLO_PARSE_LIBRARY} INTERFACE util-${CMAKE_BUILD_TYPE})

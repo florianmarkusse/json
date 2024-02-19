@@ -1,0 +1,18 @@
+{
+  "boolarr": [true, true, true, false, true],
+  "a": "abc",
+  "b": 123,
+  "aa": {
+    "strArr1": ["first", "second", "third"],
+    "secondInside": null,
+    "aa": "test-a",
+    "firstInside": {
+      "aa": "test-a",
+      "bb": null
+    },
+    "bb": 666
+  },
+  "uintarr": [1, 3000, 2],
+  "strArr2": null
+}
+
