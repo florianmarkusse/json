@@ -9,16 +9,16 @@ on a simple UNIX system.
 
 To get started:
 1. Clone the repository: 
-```
+```sh
 git clone git@github.com:florianmarkusse/json.git
 ```
 2. Install the required (dev-)dependencies, should be a no-op if skipping the development dependencies:
-```
+```sh
 ./install-dependencies.sh # or,
 ./install-dev-dependencies.sh
 ```
 3. Run the build script:
-```
+```sh
 ./build.sh -h
 ```
 
@@ -41,7 +41,7 @@ currently **not** supported.
 Below is an example of how to use the `json` tool. Also have a look at
 `json/example`.
 
-```
+```c
 #include "util/log.h"           // for FLO_INFO, FLO_FLUSH_AFTER, FLO_LOG_C...
 #include "util/memory/arena.h"  // for flo_arena
 #include "util/text/string.h"   // for FLO_STRING, flo_string, FLO_STRING_LEN
