@@ -1,11 +1,11 @@
-# JSON parser & (de)serializer
-
+# Zero-allocation JSON parser & (de)serializer
 This project contains the serializing and deserializing of JSON according to a
 schema. Note that it is not possible to parse a generic JSON input, a schema
 must always be passed. 
 
 Moreover, the project requires no dependencies other than those pre-installed
-on a simple UNIX system.
+on a simple UNIX system. Additionally, the library functions without allocating
+any memory, except when using the serializer to store the intermediate buffer.
 
 To get started:
 1. Clone the repository: 
